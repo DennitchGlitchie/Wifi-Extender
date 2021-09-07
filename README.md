@@ -6,7 +6,7 @@ https://www.adafruit.com/product/4292?gclid=Cj0KCQjwm9yJBhDTARIsABKIcGaMCCXctRT9
 
 (2) Formatting SD Card
 diskutil list to identify where the SD card is (unmount if its busy)
-Use the following file from Andrew
+Use the following file from Andrew https://blog.qartis.com/void-rpi4-musl-20210828.img.xz
 sudo dd if=~/Downloads/void-rpi4-musl-20210828.img of=/dev/rdisk2 bs=4m 
 
 (3) Logging in
