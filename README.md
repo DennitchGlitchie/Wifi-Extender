@@ -23,6 +23,7 @@ https://unix.stackexchange.com/questions/531071/how-to-connect-with-wifi-during-
 
 (6) SHHing into the PI:
 sudo ln -s /etc/sv/sshd /var/service/
+Note: I encountered a problem that made me want to reset the SD card on the pi. This generated a new SSH authentication/key. This had to be added to the /.shh/known_hosts file
 
 (7) Getting Bash and Vim going:
 Typing in "Bash" to switch to bash
