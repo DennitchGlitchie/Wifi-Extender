@@ -21,6 +21,20 @@ wpa_passphrase SSID PASSWORD >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
 wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant-wlan0.conf (this needs to be ran on every resart)
 https://unix.stackexchange.com/questions/531071/how-to-connect-with-wifi-during-void-linux-installation
 
+Andrew has offered the following alternative:
+let's try to simplify that
+here's my /etc/wpa_supplicant/wpa_supplicant.conf:
+ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=wheel
+update_config=1
+
+network={
+	ssid="NETGEAR-2"
+	psk="xxx"
+}
+and then I just ln -s /etc/sv/wpa_supplicant /var/service
+
+
 (6) SHHing into the PI:
 sudo ln -s /etc/sv/sshd /var/service/
 Note: I encountered a problem that made me want to reset the SD card on the pi. This generated a new SSH authentication/key. This had to be added to the /.shh/known_hosts file
