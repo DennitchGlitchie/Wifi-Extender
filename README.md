@@ -21,7 +21,7 @@ wpa_passphrase SSID PASSWORD >> /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
 wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant-wlan0.conf (this needs to be ran on every resart)
 https://unix.stackexchange.com/questions/531071/how-to-connect-with-wifi-during-void-linux-installation
 
-Andrew has offered the following alternative:
+Andrew has offered the following alternative: (I have gotten this to work successfully)
 let's try to simplify that
 here's my /etc/wpa_supplicant/wpa_supplicant.conf:
 ctrl_interface=/run/wpa_supplicant
@@ -32,8 +32,8 @@ network={
 	ssid="NETGEAR-2"
 	psk="xxx"
 }
-and then I just ln -s /etc/sv/wpa_supplicant /var/service
 
+and then I just ln -s /etc/sv/wpa_supplicant /var/service
 
 (6) SHHing into the PI:
 sudo ln -s /etc/sv/sshd /var/service/
@@ -41,9 +41,13 @@ Note: I encountered a problem that made me want to reset the SD card on the pi. 
 
 (7) Getting Bash and Vim going:
 Typing in "Bash" to switch to bash
-Setting the date sudo date -s '2021-01-04 13:04:00'
+Setting the date sudo date -s '2021-01-04 13:04:00' (have to do this every time? )
 xbps-install -S vim
 Setting up vimrc at vim ~/.vimrc
+
+(8) Package Manager Nix
+xbps-install -Sy nix
+https://voidlinux.org/news/2014/01/Using-the-Nix-package-manager.html
 
 (8) Following the Tutorial
 https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
