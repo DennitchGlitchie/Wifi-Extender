@@ -51,3 +51,7 @@ https://voidlinux.org/news/2014/01/Using-the-Nix-package-manager.html
 
 (8) Following the Tutorial
 https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
+
+(9) using xbps-install instead of apt-get
+
+(10) using XX instead of systemctl 
