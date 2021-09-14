@@ -54,4 +54,14 @@ https://willhaley.com/blog/raspberry-pi-wifi-ethernet-bridge/
 
 (9) using xbps-install instead of apt-get
 
-(10) using XX instead of systemctl 
+
+
+xbps-query -R -s parprouted  #search for the package (tells us that it was installed)
+xbps-query -f parprouted #what is installed specifically (binary and the manual file)
+mkdir /etc/sv/parprouted #"parprouted" is up to us to name
+We are utilizeing runit instead of systemd 
+
+Setting the date time 
+ln -s /etc/sv/ntpd/ /var/service
+
+
