@@ -68,3 +68,7 @@ Diagnosing "dhcp-helper: cannot bind DHCP server socket: Address in use"
 https://wiki.voidlinux.org/Frequently_Asked_Questions#Which_package_contains_XYZ.3F
 xbps-install net-tools
 netstat -nlp (this is di
+
+hmm, I've never heard of iwgetid
+I just use "iw dev wlan0 link"
+
