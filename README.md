@@ -72,3 +72,16 @@ netstat -nlp (this is di
 hmm, I've never heard of iwgetid
 I just use "iw dev wlan0 link"
 
+Checking what wifi network I'm on: 
+ok I tried xbps-query -Ro and it didn't work for me either
+I actually use xtools so I didn't know how discouraged xbps-query -Ro is
+it turns out it's a really shitty feature that re-downloads the first chunk of every single package from the mirror to search it
+there's an add-on utility to xbps, called xtools
+that provides some nice additional features, including a tool caled xlocate that builds a searchable index of all files in all packages
+so you can "xbps-install xtools",
+then try "xlocate netstat" and it'll say you need to run "xlocate -S" to generate the index
+once you generate the index, "xlocate netstat" will find a bunch of unrelated hits, files like gnome-netstatus-txrx.svg
+so then you can search more specifically: xlocate bin/netstat
+which would find /usr/bin/netstat, /sbin/netstat, etc
+and that search would find the single package that contains /usr/bin/netstat
+
