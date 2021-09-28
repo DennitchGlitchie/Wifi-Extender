@@ -85,3 +85,21 @@ so then you can search more specifically: xlocate bin/netstat
 which would find /usr/bin/netstat, /sbin/netstat, etc
 and that search would find the single package that contains /usr/bin/netstat
 
+On Raspberry Pi:
+ip link set up dev eth0
+ip a add 10.99.0.1/24 dev eth0
+ping 10.99.0.2
+iptables-save
+iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+iptables -A FORWARD -i wlan0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i eth0 -o wlan0 -j ACCEPT
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+On Macbook: 
+Going to network preferences 
+Configure IPv4: Manually
+IP Address: 10.99.0.2
+Subnet Maks: 255.255.255.0
+Router 10.99.0.1
+
+
