@@ -102,4 +102,7 @@ IP Address: 10.99.0.2
 Subnet Maks: 255.255.255.0
 Router 10.99.0.1
 
+Need to add DNS servers too 
+https://www.cnet.com/tech/computing/how-to-change-dns-windows-mac-osx/
+
 
